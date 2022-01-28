@@ -1,0 +1,43 @@
+-------------- GENERAL ---------------
+Constraint count: 5
+------------ CONSTRAINT 1 ------------
+Constraint name: "noFlowFromAdminNodeToNonAdmins"
+Violations found: 0
+--------- CONSTRAINT DETAILS ---------
+Condition: NEVER FLOWS
+Destination Characteristics: "UserLevel" set to variable "UL1"
+
+
+------------ CONSTRAINT 2 ------------
+Constraint name: "noFlowToOutsiders"
+Violations found: 0
+--------- CONSTRAINT DETAILS ---------
+Condition: NEVER FLOWS
+Destination Characteristics: "UserLevel" set to variable "UL2"
+
+
+------------ CONSTRAINT 3 ------------
+Constraint name: "noFlowToInternalNodeFromNonAuthenticatedUsers"
+Violations found: 0
+--------- CONSTRAINT DETAILS ---------
+Data Characteristics: "UserLevel" set to "Unauthenticated"
+Condition: NEVER FLOWS
+Destination Characteristics: "OriginIdentity" set to "InternalNode"
+
+
+------------ CONSTRAINT 4 ------------
+Constraint name: "noRestrictedDataFlowToNonAdmins"
+Violations found: 0
+--------- CONSTRAINT DETAILS ---------
+Data Characteristics: "DataLevel" set to "Restricted"
+Condition: NEVER FLOWS
+Destination Characteristics: "UserLevel" set to variable "UL3"
+
+
+------------ CONSTRAINT 5 ------------
+Constraint name: "noInternalDataFlowToNonAdmins"
+Violations found: 0
+--------- CONSTRAINT DETAILS ---------
+Data Characteristics: "DataLevel" set to "Internal"
+Condition: NEVER FLOWS
+Destination Characteristics: "UserLevel" set to variable "UL4"
